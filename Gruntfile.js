@@ -2,45 +2,30 @@
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-casper');
 
 	grunt.initConfig({
-		express: {
-			options: {
-				port: 8000
-			},
-			dev: {
+		connect: {
+			server: {
 				options: {
-					script: 'server.js'
-				}
-			},
-			prod: {
-				options: {
-					script: 'server.js',
-					node_env: 'production'
-				}
-			},
-			test: {
-				options: {
-					script: 'server.js'
+					port: 8000,
+					open: true
 				}
 			}
 		},
 		casper: {
 			acceptance : {
 				options : {
-					test : true,
+					test : true
 				},
-				files : {
-					'app/example.html' : ['test/casper.js']
-				}
+				src : ['test/casper.js']
 			}
 		}
 	});
 
-	grunt.registerTask('server', [ 'express:dev' ]);
-	grunt.registerTask('test',['express:dev','casper']);
+	grunt.registerTask('server', [ 'connect' ]);
+	grunt.registerTask('test',['connect','casper']);
 	grunt.registerTask('default', ['jshint', 'test']);
 
 };

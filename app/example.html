@@ -16,10 +16,8 @@
     var results       = $('#results'),
         url           = "http://api.geonames.org/searchJSON",
         query         = $('#searchedlocation').val();
-
 		results.html('searching....');
 		results.addClass('searching');
-
 		$.getJSON(url + '?username=zesk8&q=' + query + '&maxRows=25&featureClass=P', null, function (data) {
 			console.log(data);
 			var data = data.geonames,
