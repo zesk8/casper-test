@@ -3,6 +3,8 @@ Casper test
 
 ##Requirements
 + phantomjs
-+ casperjs
-------
++ caspersjs
+
+----------
+
 ### Run grunt test
