@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 				options : {
 					test : true
 				},
-				src : ['test/casper.js']
+				src : ['test/ajax.js', 'test/am.js', 'test/fiesta-inn.js']
 			}
 		}
 	});
