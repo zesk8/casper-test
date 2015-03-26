@@ -10,7 +10,7 @@ casper.test.begin('Test modal', function (test) {
 
 	casper.waitForSelector('#m-serv', function () {
 		this.echo('see the modal!');
-    this.capture('modal.png');
+    this.capture('img/modal.png');
 	});
 
 	casper.run(function () {
